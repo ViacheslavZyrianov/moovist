@@ -1,32 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div
+    id="app"
+    class="moovist"
+  >
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-#nav {
-  padding: 30px;
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  .moovist {
+    display: flex;
+    font-family: 'Roboto', serif;
+    min-height: 100vh;
+    padding: 24px;
+  }
 
-    &.router-link-exact-active {
-      color: #42b983;
+  .page {
+    width: 100%;
+  }
+
+  .input {
+    border: 1px solid #afafaf;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+
+  .button {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #20639b;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: lighten(#20639b, 16);
+    }
+
+    &[disabled] {
+      background-color: rgb(143, 143, 143);
+      cursor: disabled;
     }
   }
-}
 </style>
